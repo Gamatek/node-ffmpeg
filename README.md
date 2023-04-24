@@ -18,9 +18,11 @@ options.push("audio.mp3");
 const ffmpeg = new FFmpeg(ffmepgPath, options);
 
 ffmpeg.on("progress", ({ timemark }) => {
+    // Get current time
     const [ h, min, s ] = timemark.split(":").map((n) => Number(n));
     const totalSeconds = (h*60*60)+(min*60)+s;
-    console.log(`${chalk.cyan("[Processing]")} ${videoId} ${Math.floor(totalSeconds/lengthSeconds*100)}%`);
+
+    console.log(Math.floor(totalSeconds/lengthSeconds*100)+"%");
 });
     
 ffmpeg.on("end", () => {
