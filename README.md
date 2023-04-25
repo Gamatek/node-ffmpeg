@@ -3,6 +3,7 @@
 ### Exemple: Convert MP4 to MP3 16K
 ```js
 const FFmpeg = require("./ffmpeg");
+const ffmepgPath = "/usr/bin/ffmpeg";
 
 const options = [];
 
