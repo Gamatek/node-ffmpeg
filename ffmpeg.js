@@ -70,7 +70,7 @@ class FFmpeg extends EventEmitter {
             return {
                 frames: parseInt(progress.frame, 10),
                 currentFps: parseInt(progress.fps, 10),
-                currentKbps: progress.bitrate ? parseFloat(progress.bitrate.replace("kbits/s", '')) : 0,
+                currentKbps: progress.bitrate ? parseFloat(progress.bitrate.replace("kbits/s", "")) : 0,
                 targetSize: parseInt(progress.size || progress.Lsize, 10),
                 timemark: progress.time
             };
